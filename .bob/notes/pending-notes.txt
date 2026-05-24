@@ -1,0 +1,14 @@
+{"id":"e357ebd0-0320-4653-b150-4a72e3ff1a4e","ts":"2026-05-24T00:15:55.871Z","path":"/home/paul/Documents/mcpforge/README.md","version":"1.0.0","taskID":"26596cbc-7f77-44dd-91ba-5cae9588e747"}
+{"id":"902e8ecd-5e1c-4916-a97a-831e5c1cf7e1","ts":"2026-05-24T00:19:31.288Z","path":"/home/paul/Documents/mcpforge/QUICKSTART.md","version":"1.0.0","taskID":"26596cbc-7f77-44dd-91ba-5cae9588e747"}
+{"id":"c9c23e3d-4303-490a-b18f-172f3cc3ddb6","ts":"2026-05-24T00:21:42.584Z","path":"/home/paul/Documents/mcpforge/docker-compose.yml","version":"1.0.0","taskID":"26596cbc-7f77-44dd-91ba-5cae9588e747"}
+{"id":"6a593ab4-9c40-4029-9820-9d01327cc474","ts":"2026-05-24T00:22:08.316Z","path":"/home/paul/Documents/mcpforge/QUICKSTART.md","version":"1.0.0","taskID":"26596cbc-7f77-44dd-91ba-5cae9588e747"}
+{"id":"40f1d7df-5e9a-48e3-9938-38e557e7cc08","ts":"2026-05-24T00:23:17.661Z","path":"/home/paul/Documents/mcpforge/README.md","version":"1.0.0","taskID":"26596cbc-7f77-44dd-91ba-5cae9588e747"}
+{"id":"ef34773b-8197-4fd1-af17-1ccf0589be8c","ts":"2026-05-24T00:34:00.114Z","path":"/home/paul/Documents/mcpforge/frontend/src/app/globals.css","version":"1.0.0","taskID":"26596cbc-7f77-44dd-91ba-5cae9588e747"}
+{"id":"5a2fa697-34b6-4d90-b0f9-1bfa14b4650d","ts":"2026-05-24T00:34:50.305Z","path":"/home/paul/Documents/mcpforge/frontend/src/app/globals.css","version":"1.0.0","taskID":"26596cbc-7f77-44dd-91ba-5cae9588e747"}
+{"id":"2418f6a4-d94d-4e03-b16d-a388b609ea44","ts":"2026-05-24T00:35:31.837Z","path":"/home/paul/Documents/mcpforge/frontend/src/app/globals.css","version":"1.0.0","taskID":"26596cbc-7f77-44dd-91ba-5cae9588e747"}
+{"id":"063c5b2c-aeff-4d5e-8d0c-da7e8197267f","ts":"2026-05-24T00:42:17.233Z","path":"/home/paul/Documents/mcpforge/frontend/src/app/page.tsx","version":"1.0.0","taskID":"26596cbc-7f77-44dd-91ba-5cae9588e747"}
+{"id":"6c84a2e4-7139-4724-8a5b-9296acdbd9fb","ts":"2026-05-24T00:42:42.770Z","path":"/home/paul/Documents/mcpforge/backend/tests/test_main.py","version":"1.0.0","taskID":"26596cbc-7f77-44dd-91ba-5cae9588e747"}
+{"id":"4760763f-e94e-4756-9c55-f6b2b1e9f1c3","ts":"2026-05-24T00:42:57.807Z","path":"/home/paul/Documents/mcpforge/backend/pytest.ini","version":"1.0.0","taskID":"26596cbc-7f77-44dd-91ba-5cae9588e747"}
+{"id":"c361f141-367e-4a8e-8467-496dbcdfcae7","ts":"2026-05-24T00:43:15.604Z","path":"/home/paul/Documents/mcpforge/backend/tests/test_main.py","version":"1.0.0","taskID":"26596cbc-7f77-44dd-91ba-5cae9588e747"}
+{"id":"cee5d4ee-4497-45ba-8661-bdbb3d148de1","ts":"2026-05-24T00:43:32.640Z","path":"/home/paul/Documents/mcpforge/backend/tests/test_integration.py","version":"1.0.0","taskID":"26596cbc-7f77-44dd-91ba-5cae9588e747"}
+{"id":"bcf20c76-d99d-4e49-83e9-eec2b7fa82e7","ts":"2026-05-24T00:43:47.347Z","path":"/home/paul/Documents/mcpforge/backend/tests/test_integration.py","version":"1.0.0","taskID":"26596cbc-7f77-44dd-91ba-5cae9588e747"}
