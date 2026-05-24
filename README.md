@@ -221,12 +221,14 @@ docker-compose up -d
 docker-compose logs -f
 
 # Access the application
-# Frontend:    http://localhost:3000
-# Backend API: http://localhost:8000
-# API Docs:    http://localhost:8000/api/docs
-# Prometheus:  http://localhost:9090
-# Grafana:     http://localhost:3001
+# Frontend:    http://localhost:3456
+# Backend API: http://localhost:8765
+# API Docs:    http://localhost:8765/api/docs
+# Prometheus:  http://localhost:9091
+# Grafana:     http://localhost:3002
 ```
+
+**Note**: Ports have been changed from defaults to avoid conflicts with common services.
 
 ### 💻 Local Development
 
@@ -285,7 +287,7 @@ JWT_SECRET=your_jwt_secret
 
 # Frontend Authentication
 NEXTAUTH_SECRET=your_nextauth_secret
-NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_URL=http://localhost:3456
 
 # OAuth Providers (optional)
 GITHUB_CLIENT_ID=your_github_client_id
@@ -387,7 +389,8 @@ locust -f tests/load_test.py
 
 - **[Technical Specification](./MCP_FORGE_SPECIFICATION.md)** - Complete architecture and design
 - **[Implementation Roadmap](./IMPLEMENTATION_ROADMAP.md)** - Detailed development plan
-- **[API Documentation](http://localhost:8000/api/docs)** - Interactive OpenAPI docs
+- **[Quick Start Guide](./QUICKSTART.md)** - Step-by-step setup instructions
+- **[API Documentation](http://localhost:8765/api/docs)** - Interactive OpenAPI docs
 - **[Contributing Guide](./CONTRIBUTING.md)** - How to contribute
 - **[Security Policy](./SECURITY.md)** - Security guidelines
 

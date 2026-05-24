@@ -50,11 +50,19 @@ docker-compose logs -f
 
 Once all containers are running (takes ~2-3 minutes on first start):
 
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:8000
-- **API Documentation**: http://localhost:8000/api/docs
-- **Prometheus**: http://localhost:9090
-- **Grafana**: http://localhost:3001 (default: admin/admin)
+- **Frontend**: http://localhost:3456
+- **Backend API**: http://localhost:8765
+- **API Documentation**: http://localhost:8765/api/docs
+- **Prometheus**: http://localhost:9091
+- **Grafana**: http://localhost:3002 (default: admin/admin)
+
+**Note**: Ports have been changed from defaults to avoid conflicts:
+- Frontend: 3456 (instead of 3000)
+- Backend: 8765 (instead of 8000)
+- PostgreSQL: 5433 (instead of 5432)
+- Redis: 6380 (instead of 6379)
+- Prometheus: 9091 (instead of 9090)
+- Grafana: 3002 (instead of 3001)
 
 ### Step 5: Verify Installation
 
@@ -63,10 +71,10 @@ Once all containers are running (takes ~2-3 minutes on first start):
 docker-compose ps
 
 # Test backend health
-curl http://localhost:8000/health
+curl http://localhost:8765/health
 
 # Test frontend
-curl http://localhost:3000
+curl http://localhost:3456
 ```
 
 ---
@@ -136,11 +144,11 @@ docker-compose exec frontend npm test
 
 ### Port Already in Use
 
-If you get "port already in use" errors:
+If you still get "port already in use" errors with the new ports:
 
 ```bash
 # Check what's using the port
-sudo lsof -i :3000  # or :8000, :5432, etc.
+sudo lsof -i :3456  # or :8765, :5433, etc.
 
 # Stop the conflicting service or change ports in docker-compose.yml
 ```
@@ -186,7 +194,7 @@ docker-compose restart frontend
 
 ### Prometheus Metrics
 
-Access Prometheus at http://localhost:9090
+Access Prometheus at http://localhost:9091
 
 Example queries:
 - `http_requests_total` - Total HTTP requests
@@ -195,7 +203,7 @@ Example queries:
 
 ### Grafana Dashboards
 
-1. Access Grafana at http://localhost:3001
+1. Access Grafana at http://localhost:3002
 2. Login with `admin` / `admin` (change on first login)
 3. Add Prometheus data source: http://prometheus:9090
 4. Import dashboards from `monitoring/grafana/`
@@ -227,7 +235,7 @@ Never commit `.env` files to version control. Use:
 ## 🚀 Next Steps
 
 1. **Configure OAuth** (optional): Add GitHub/Google OAuth credentials to `.env`
-2. **Explore API**: Visit http://localhost:8000/api/docs
+2. **Explore API**: Visit http://localhost:8765/api/docs
 3. **Read Documentation**: Check `MCP_FORGE_SPECIFICATION.md`
 4. **Join Community**: GitHub Discussions for questions
 

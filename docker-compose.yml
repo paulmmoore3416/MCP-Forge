@@ -7,10 +7,10 @@ services:
       dockerfile: Dockerfile
       target: dev
     ports:
-      - "3000:3000"
+      - "3456:3000"  # Changed from 3000 to avoid conflicts
     environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:8000
-      - NEXTAUTH_URL=http://localhost:3000
+      - NEXT_PUBLIC_API_URL=http://localhost:8765
+      - NEXTAUTH_URL=http://localhost:3456
       - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
     depends_on:
       - backend
@@ -27,13 +27,13 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"
+      - "8765:8000"  # Changed from 8000 to avoid conflicts
     environment:
       - DATABASE_URL=postgresql+asyncpg://postgres:${DB_PASSWORD}@db:5432/mcpforge
       - REDIS_URL=redis://redis:6379
       - SECRET_KEY=${SECRET_KEY}
       - DEBUG=true
-      - CORS_ORIGINS=["http://localhost:3000"]
+      - CORS_ORIGINS=["http://localhost:3456"]
     depends_on:
       db:
         condition: service_healthy
@@ -52,7 +52,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
-      - "5432:5432"
+      - "5433:5432"  # Changed from 5432 to avoid conflicts
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -66,7 +66,7 @@ services:
   redis:
     image: redis:7-alpine
     ports:
-      - "6379:6379"
+      - "6380:6379"  # Changed from 6379 to avoid conflicts
     volumes:
       - redis_data:/data
     command: redis-server --appendonly yes
@@ -94,7 +94,7 @@ services:
   prometheus:
     image: prom/prometheus:latest
     ports:
-      - "9090:9090"
+      - "9091:9090"  # Changed from 9090 to avoid conflicts
     volumes:
       - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
@@ -108,7 +108,7 @@ services:
   grafana:
     image: grafana/grafana:latest
     ports:
-      - "3001:3000"
+      - "3002:3000"  # Changed from 3001 to avoid conflicts
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin}
     volumes:
