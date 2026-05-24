@@ -1,0 +1,31 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'mcp-forge'
+    environment: 'development'
+
+scrape_configs:
+  # Backend API metrics
+  - job_name: 'mcp-forge-backend'
+    static_configs:
+      - targets: ['backend:8000']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # Prometheus self-monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # PostgreSQL metrics (if exporter is added)
+  - job_name: 'postgres'
+    static_configs:
+      - targets: ['db:9187']
+    scrape_interval: 30s
+
+  # Redis metrics (if exporter is added)
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis:9121']
+    scrape_interval: 30s
