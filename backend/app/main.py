@@ -9,6 +9,7 @@ from fastapi.responses import Response
 
 from app.config import get_settings
 from app.database import engine, Base
+from app.api import servers
 
 settings = get_settings()
 
@@ -159,23 +160,15 @@ async def metrics():
     return Response(content=generate_latest(), media_type="text/plain")
 
 
-# API routers will be included here
-# TODO: Include routers for:
+# API routers
+app.include_router(servers.router, prefix=f"{settings.API_V1_PREFIX}/servers", tags=["servers"])
+
+# TODO: Include additional routers for:
 # - Authentication & Authorization (OAuth/JWT, RBAC)
-# - MCP Servers (CRUD, discovery, health checks)
 # - Agents (management, connections)
 # - Security (scanning, vulnerabilities, compliance)
 # - Metrics & Analytics (usage, performance, anomalies)
 # - Development Tools (scaffolding, testing, validation)
-
-# Example router structure (to be implemented):
-# from app.api import auth, mcps, agents, security, metrics, dev_tools
-# app.include_router(auth.router, prefix=f"{settings.API_V1_PREFIX}/auth", tags=["auth"])
-# app.include_router(mcps.router, prefix=f"{settings.API_V1_PREFIX}/mcps", tags=["mcps"])
-# app.include_router(agents.router, prefix=f"{settings.API_V1_PREFIX}/agents", tags=["agents"])
-# app.include_router(security.router, prefix=f"{settings.API_V1_PREFIX}/security", tags=["security"])
-# app.include_router(metrics.router, prefix=f"{settings.API_V1_PREFIX}/metrics", tags=["metrics"])
-# app.include_router(dev_tools.router, prefix=f"{settings.API_V1_PREFIX}/dev", tags=["dev-tools"])
 
 
 @app.get("/")

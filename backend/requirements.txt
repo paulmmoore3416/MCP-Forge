@@ -18,6 +18,11 @@ celery==5.3.6
 # Note: Official MCP Python SDK to be added when available
 httpx==0.26.0
 
+# MCP Discovery
+psutil==5.9.8
+docker==7.0.0
+aiohttp==3.9.3
+
 # Auth & Security
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
